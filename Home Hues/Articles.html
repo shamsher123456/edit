@@ -47,7 +47,7 @@
     
     <section class="articles">
         
-        </section>
+    
     
         <div class="grey"></div>
         <div class="headings">
@@ -92,40 +92,76 @@
             <p>Consider a warm neutral as an alternative to gray or, better yet, use it along with gray. “Layering neutrals and ramping up textures is a great way to show off your personality and bring dimension to a space in an understated way,” Xaykao says.</p>
         </div>
         
-        
-        
+        <section class="furniture-calculator">
+            <h2>Furniture Cost Calculator</h2>
+            <form id="furnitureForm">
+           <div class="sofa" >
+               <h3 class="heading-cal">Sofa:</h3>
+                <label for="sofaSelect">Select Sofa:</label>
+              <select id="sofaSelect" class="form-select">
+                <option value="">Select  Sofa</option>
+                <option value="modernSofa" data-cost="500">Modern Sofa</option>
+                <option value="classicSofa" data-cost="700">Classic Sofa</option>
+              </select>
+            </div> 
+            <div class="sofa" >
+                <h3 class="heading-cal">Tables:</h3>
+              <label for="chairSelect" class="mt-2">Select Chair:</label>
+              <select id="chairSelect" class="form-select">
+                <option value="">Select  Table</option>
+                <option value="officeChair" data-cost="100">Office table</option>
+                <option value="gamingChair" data-cost="150">Gaming Table</option>
+              </select>
+              </div>
+              <div class="sofa" >
+                <h3 class="heading-cal">couches: </h3>
+              <label for="tableSelect" class="mt-2">Select Couches:</label>
+              <select id="tableSelect" class="form-select">
+                <option value="">Select  Couches</option>
+                <option value="diningTable" data-cost="200">Best couches</option>
+                <option value="coffeeTable" data-cost="120">Comfortable couches</option>
+              </select>
+              </div>
+              <button type="button" onclick="calculateCost()" class="btn btn-primary mt-2">Calculate Cost</button>
+            </form>
+            
+            <div id="costDisplay" class="mt-3"></div>
+          </section>
+        </section>
         </section>
         
+  
+        
+          
+        
+        
+        
+        <script>
+            function calculateCost() {
+              const sofaSelect = document.getElementById('sofaSelect');
+              const chairSelect = document.getElementById('chairSelect');
+              const tableSelect = document.getElementById('tableSelect');
+              
+              const selectedSofa = sofaSelect.options[sofaSelect.selectedIndex];
+              const selectedChair = chairSelect.options[chairSelect.selectedIndex];
+              const selectedTable = tableSelect.options[tableSelect.selectedIndex];
+              
+              const sofaCost = parseInt(selectedSofa.getAttribute('data-cost')) || 0;
+              const chairCost = parseInt(selectedChair.getAttribute('data-cost')) || 0;
+              const tableCost = parseInt(selectedTable.getAttribute('data-cost')) || 0;
+              
+              const totalCost = sofaCost + chairCost + tableCost;
+              
+              document.getElementById('costDisplay').innerText = `Total Cost: $${totalCost}`;
+            }
+          </script>
         
         
         
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+            
         
         
         
